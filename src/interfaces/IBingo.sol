@@ -5,4 +5,6 @@ interface Bingo {
     function bet(uint256 _gameId) external;
 
     function getCard(uint256 _gameId, bytes32 key) external;
+
+    function getPlayerCard(address _player, uint256 _gameId) external;
 }

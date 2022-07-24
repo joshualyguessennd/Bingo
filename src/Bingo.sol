@@ -281,6 +281,9 @@ contract Bingo is Ownable, VRFConsumerBase {
         return games[_gameId];
     }
 
+    /**
+    @dev get player all the number he gets from the specific game 
+    */
     function getPlayerCard(address _address, uint256 _gameId)
         public
         view
