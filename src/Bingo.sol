@@ -188,10 +188,10 @@ contract Bingo is Ownable, VRFConsumerBase {
     {
         require(games[_gameId].turnDuration <= _turn, "!turns");
         for (uint256 i; i < _turn; i++) {
-            uint256 idx = (uint256(keccak256(abi.encode(randomResult, i))) %
+            uint256 idx = (uint256(keccak256(abi.encode(gameKey[_gameId], i))) %
                 5) + 1;
             gameResult[_gameId][idx] =
-                (uint256(keccak256(abi.encode(randomResult, i))) % 75) +
+                (uint256(keccak256(abi.encode(gameKey[_gameId], i))) % 75) +
                 1;
         }
     }
